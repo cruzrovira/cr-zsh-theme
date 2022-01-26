@@ -1,15 +1,11 @@
 function real_time() {
     local color="%{$fg_no_bold[cyan]%}";
-    # local color2="%{$fg_no_bold[yellow]%}";
-    # local time="[$(date +%I:%M)]";
     local color_reset="%{$reset_color%}";
      echo "${color} $(host_name) on${color_reset}";
-    # echo "${color} $(host_name)${color_reset} 🤖 ${color}${time}${color_reset}";
-    # echo "${color}🧔🏻$(host_name)${color_reset} 🤖 ${color}${time}${color_reset}";
 }
 
 function host_name() {
-    local color="%{$fg_no_bold[cyan]%}";                    # color in PROMPT need format in %{XXX%} which is not same with echo
+    local color="%{$fg_no_bold[cyan]%}";          # color in PROMPT need format in %{XXX%} which 
     local ip
     if [[ "$OSTYPE" == "linux-gnu" ]]; then
         ip="$(hostname)";
@@ -24,7 +20,6 @@ function host_name() {
 function directory() {
     local color="%{$fg_no_bold[white]%}";
     local directory=" %c";
-    # local directory="${PWD/#$HOME/~}";
     local color_reset="%{$reset_color%}";
     echo "📁${color}${directory}${color_reset}";
 }
@@ -49,10 +44,8 @@ function update_command_status() {
     if $1;
     then
         arrow="%{$fg_bold[yellow]%}❱";
-        # arrow="%{$fg_bold[yellow]%}❱%{$fg_bold[blue]%}❱%{$fg_bold[red]%}❱";
     else
         arrow="%{$fg_bold[red]%}❱";
-        # arrow="%{$fg_bold[red]%}❱❱❱";
     fi
     COMMAND_STATUS="${arrow}${reset_font}${color_reset}";
 }
@@ -79,10 +72,6 @@ output_command_execute_after() {
     fi
     local color_reset="$reset_color";
     cmd="${color_cmd}${cmd}${color_reset}"
-
-    # local time="[$(date +%I:%M:%S)]"
-    # local color_time="$fg_no_bold[cyan]";
-    # time="${color_time}${time}${color_reset}";
 }
 
 
