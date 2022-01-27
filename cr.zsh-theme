@@ -94,11 +94,4 @@ precmd() {
 
 setopt PROMPT_SUBST;
 
-TMOUT=1;
-TRAPALRM() {
-    if [ "$WIDGET" = "" ] || [ "$WIDGET" = "accept-line" ] ; then
-        zle reset-prompt;
-    fi
-}
-
 PROMPT='$(real_time) $(directory) $(git_status)$(command_status) ';
