@@ -1,7 +1,7 @@
 function real_time() {
     local color="%{$fg_no_bold[cyan]%}";
     local color_reset="%{$reset_color%}";
-     echo "${color} $(host_name) on${color_reset}";
+     echo "${color} $(host_name)${color_reset}";
 }
 
 function host_name() {
