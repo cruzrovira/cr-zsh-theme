@@ -1,7 +1,7 @@
 function real_time() {
     local color="%{$fg_no_bold[cyan]%}";
     local color_reset="%{$reset_color%}";
-     echo "${color} $(host_name)${color_reset}";
+     echo "${color}🦊$(host_name)${color_reset}";
 }
 
 function host_name() {
@@ -14,7 +14,7 @@ function host_name() {
     else
     fi
     local color_reset="%{$reset_color%}";
-    echo "${color}[%n@${ip}]${color_reset}";
+    echo "${color}%n@${ip}${color_reset}";
 }
 
 function directory() {
